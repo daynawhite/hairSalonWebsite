@@ -33,7 +33,7 @@ body {
     .container{
       display: grid;  
       grid-template-columns: .5fr 1fr 1fr .5fr;
-      grid-template-rows: ..4fr .8fr .7fr .7fr 1.2fr .5fr .5fr .3fr;
+      grid-template-rows: .4fr .7fr .7fr .7fr 1.2fr .5fr .5fr .3fr;
       box-sizing: border-box;
       grid-row-gap: 15px;
       grid-column-gap: 5px;
@@ -72,34 +72,49 @@ body {
 
   banner {
     grid-area: banner;
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-flex;
+    /* flex-wrap: wrap; */
     color: black;
     border: 2px solid;
     border-color: rgb(95,179,189);
     border-radius: 1% 1% 1% 1%;
-    object-fit:fill;
+    /* object-fit:fill; */
+    align-items: stretch;
+    background-color: rgb(255,255,255);
+
   }
 
 .images img {
     /* width: 100%; */
-    object-fit:fill;
+    /* object-fit:fill; */
+    flex-grow: 1;
+    flex-shrink: 1;
+    /* flex-basis: 50%; */
+    margin-bottom: 0;
+
   }
 
 .great-hairstyle {
-    object-fit:fill;
+  display: flex;
+  flex-wrap: wrap;
+    /* object-fit:fill; */
+    flex-shrink: 1;
+    flex-grow: 1;
+   padding-left: 10%;
+   padding-right: 10%;
+    /* padding-top: 20%; */
+    background-color: rgb(255,255,255);
 }
 
   h2 {
     font-size: 40px;
-    line-height: 1;
     font-family: "black han sans";
     font-weight: bolder;
     line-height: 1;
     /* padding-left: 50px;
     padding-right: 50px;
     padding-top: 110px; */
-    margin: 0;
+    margin-bottom: 0;
     background-color: rgb(255,255,255);
     }
           

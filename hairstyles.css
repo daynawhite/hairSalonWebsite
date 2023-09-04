@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(237,237,237);
+    font-family: sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr repeat(4)1fr 1fr 1fr;
+    box-sizing: border-box;
+    grid-row-gap: 45px;
+    grid-column-gap: 20px;
+    grid-template-areas: 
+        "nav nav nav nav nav nav"
+        "ls top-buffer top-buffer top-buffer top-buffer rs"
+        "ls cards cards cards cards rs"
+        "ls cards cards cards cards rs"
+        "ls cards cards cards cards rs"
+        "ls cards cards cards cards rs"
+        "ls bottom-buffer bottom-buffer bottom-buffer bottom-buffer rs"
+        "footer footer footer footer footer footer";
+
+
+
+}
