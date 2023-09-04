@@ -1,26 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+    
+body {
+    font-size: 12px;
+    line-height: 2;
+    font-family: "black han sans",Arial, Helvetica, sans-serif;
+    margin:0;
+    padding-left:0;
+    background-color: rgb(237,237,237);
+}
+
+@media screen and (min-width: 1096px) {
 .container {
     display: grid;
-    height: 900px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  
-  grid-template-areas: 
-    "nav nav nav nav"
-    "banner banner banner banner"
-    "first second third fourth"
-    "featured featured hairstyle hairstyle"
-    "featured featured baldguy baldguy"
-    "footer footer footer footer";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .7fr .6fr .6fr .5fr .5fr auto;
+    box-sizing: border-box;
+    grid-row-gap: 45px;
+    grid-column-gap: 20px;
+    grid-template-areas: 
+    "nav nav nav nav nav nav"
+    "ls banner banner banner banner rs"
+    "ls first second third fourth rs"
+    "ls featured featured hairstyle hairstyle rs"
+    "ls featured featured baldguy baldguy rs"
+    "footer footer footer footer footer footer";
   }
-  
+}
+
+@media screen and (max-width: 1095px){
+    .container{
+      display: grid;  
+      grid-template-columns: .5fr 1fr 1fr .5fr;
+      grid-template-rows: auto;
+      box-sizing: border-box;
+      grid-row-gap: 15px;
+      grid-column-gap: 5px;
+      grid-template-areas:
+        "nav nav nav nav"
+        "ls banner banner rs"
+        "ls first second rs"
+        "ls third fourth rs"
+        "ls featured featured rs"
+        "ls hairstyle hairstyle rs"
+        "ls baldguy baldguy rs"
+        "footer footer footer footer"
+    }
+  }
+
   #nav {
     grid-area: nav;
+    background-color: rgb(77,142,150);
+    color: rgb(77,142,150);
+    z-index: -1;
+    /* height: 175px; */
   }
   
+  .sidemargin {
+    background-color: rgb(237,237,237);
+    color: rgb(237,237,237);
+  }
+
+  #ls {
+    grid-area: ls;
+  }
+
+  #rs {
+    grid-area: rs;
+  }
+
   banner {
     grid-area: banner;
+    display: inline-flex;
+    color: black;
+    border: 2px solid;
+    border-color: rgb(95,179,189);
+    border-radius: 1% 1% 1% 1%;
   }
-  
+
+.images img {
+    width: 120%;
+
+  }
+.great-hairstyle {
+   width: 100%;
+}
+  h2 {
+    font-size: 40px;
+    line-height: 1;
+    font-family: "black han sans";
+    font-weight: bolder;
+    /* padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 110px; */
+    margin: 0;
+    background-color: rgb(255,255,255);
+    }
+          
+  h3 {
+    line-height: .4;
+  }
+
+  .cards img {
+    width: 100%;
+    border: 6px solid;
+    border-color: rgb(95,179,189);
+    border-radius: 2%;
+    }
+    
   #first {
     grid-area: first;
   }
@@ -37,34 +125,79 @@
     grid-area: fourth;
   }
   
+  .blurbs {
+    padding-left: 15px;
+    padding-right: 20px;
+    border: 6px solid;
+    border-color: rgb(95,179,189);
+    }
+    
   #featured {
     grid-area: featured;
+    height: fit-content;
+    padding-bottom: 40px;
+    margin-bottom: 0;
   }
+
+  .boxtitle {
+    display: flex;
+    }
+
+#girl {
+    padding-top: 60px;
+    padding-bottom: 20px;
+    width: 25%;
+}
+        
+#hairtitle {
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: lighter;
+    padding-top: 50px;
+    line-height: 1;
+    }
+    
   
   #hairstyle {
     grid-area: hairstyle;
+    color: rgb(255,255,255);
+    background-color: rgb(80,144,148);
+    padding-top: 30px;
   }
   
+  #person{
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px;
+    font-weight: lighter;
+  }
+
   #baldguy {
     grid-area: baldguy;
+    color: rgb(255,255,255);
+    background-color: rgb(80,144,148);
+    margin-bottom: 70px;
+    margin-top: 0px;
+    display: flex;
   }
-  
+
+  #manpic {
+    transform: scale(1.1);
+    }
+    
+#helpline {
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+        
   footer {
     grid-area: footer;
+    background-color: rgb(77,142,150);
+    color: rgb(77,142,150);
+    z-index: -1;
+    /* height: 100px; */
   }
   
-  @media only screen and (max-width: 550px){
-    .container{
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-      grid-template-areas:
-        "nav nav"
-        "banner banner"
-        "card1 card2"
-        "card3 card4"
-        "featured featured"
-        "hairstyle hairstyle"
-        "baldguy baldguy"
-        "footer footer"
-    }
-  }
+ 
