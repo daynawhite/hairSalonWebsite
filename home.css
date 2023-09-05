@@ -1,42 +1,93 @@
+
 * {
     box-sizing: border-box;
+    margin: 0;
 }
     
 body {
+    width: 100%;
     font-size: 12px;
     line-height: 2;
-    font-family: "black han sans",Arial, Helvetica, sans-serif;
+    font-family: "black han sans","Changa One","Walrus Bold", Arial, Helvetica, sans-serif;
     margin:0;
     padding-left:0;
     background-color: rgb(237,237,237);
 }
 
-@media screen and (min-width: 1096px) {
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: .7fr .6fr .6fr .5fr .5fr auto;
-    box-sizing: border-box;
-    grid-row-gap: 45px;
-    grid-column-gap: 20px;
-    grid-template-areas: 
-    "nav nav nav nav nav nav"
-    "ls banner banner banner banner rs"
-    "ls first second third fourth rs"
-    "ls featured featured hairstyle hairstyle rs"
-    "ls featured featured baldguy baldguy rs"
-    "footer footer footer footer footer footer";
+@media screen and (max-width: 900px) {
+  .container {
+      display: grid;
+      grid-template-columns: 5% 90% 5%;
+      grid-template-rows: .3fr .8fr .6fr .6fr .6fr .6fr .5fr .25fr .25fr .2fr;
+      box-sizing: border-box;
+      grid-row-gap: 1%;
+      grid-column-gap: 1%;
+      grid-template-areas: 
+      "nav nav nav"
+      "ls banner rs"
+      "ls first rs"
+      "ls second rs"
+      "ls third rs"
+      "ls fourth rs"
+      "ls featured rs"
+      "ls hairstyle rs"
+      "ls baldguy rs"
+      "footer footer footer";
+    }
+    banner {
+      grid-area: banner;
+      display: inline-flex;
+      color: black;
+      border: 2px solid;
+      border-color: rgb(95,179,189);
+      border-radius: 1% 1% 1% 1%;
+      align-items: stretch;
+      background-color: rgb(255,255,255);
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-wrap:wrap;
+    }
   }
-}
 
-@media screen and (max-width: 1095px){
+  @media screen and (min-width: 1190px) {
+    .container {
+        display: grid;
+        grid-template-columns: .5fr 1fr 1fr 1fr 1fr .5fr;
+        grid-template-rows: .3fr .6fr .6fr .5fr .5fr .2fr;
+        box-sizing: border-box;
+        grid-row-gap: 2%;
+        grid-column-gap: 1%;
+        grid-template-areas: 
+        "nav nav nav nav nav nav"
+        "ls banner banner banner banner rs"
+        "ls first second third fourth rs"
+        "ls featured featured hairstyle hairstyle rs"
+        "ls featured featured baldguy baldguy rs"
+        "footer footer footer footer footer footer";
+      }
+      banner {
+        grid-area: banner;
+        display: inline-flex;
+        color: black;
+        border: 2px solid;
+        border-color: rgb(95,179,189);
+        border-radius: 1% 1% 1% 1%;
+        align-items: stretch;
+        background-color: rgb(255,255,255);
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-wrap:nowrap;
+      }
+    }
+
+@media screen and (max-width: 1190px){
     .container{
       display: grid;  
       grid-template-columns: .5fr 1fr 1fr .5fr;
-      grid-template-rows: .4fr .7fr .7fr .7fr 1.2fr .5fr .5fr .3fr;
+      grid-template-rows: .5fr .7fr .7fr .7fr 1.2fr .5fr .5fr .4fr;
       box-sizing: border-box;
-      grid-row-gap: 15px;
-      grid-column-gap: 5px;
+      grid-row-gap: 2%;
+      grid-column-gap: 1%;
       grid-template-areas:
         "nav nav nav nav"
         "ls banner banner rs"
@@ -46,6 +97,19 @@ body {
         "ls hairstyle hairstyle rs"
         "ls baldguy baldguy rs"
         "footer footer footer footer"
+    }
+    banner {
+      grid-area: banner;
+      display: inline-flex;
+      color: black;
+      border: 2px solid;
+      border-color: rgb(95,179,189);
+      border-radius: 1% 1% 1% 1%;
+      align-items: stretch;
+      background-color: rgb(255,255,255);
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-wrap:nowrap;
     }
   }
 
@@ -70,28 +134,26 @@ body {
     grid-area: rs;
   }
 
-  banner {
+  /* banner {
     grid-area: banner;
     display: inline-flex;
-    /* flex-wrap: wrap; */
     color: black;
     border: 2px solid;
     border-color: rgb(95,179,189);
     border-radius: 1% 1% 1% 1%;
-    /* object-fit:fill; */
     align-items: stretch;
     background-color: rgb(255,255,255);
-
-  }
-
-.images img {
-    /* width: 100%; */
-    /* object-fit:fill; */
     flex-grow: 1;
     flex-shrink: 1;
-    /* flex-basis: 50%; */
-    margin-bottom: 0;
+    flex-wrap:nowrap;
+  } */
 
+.images img {
+    width: 100%;
+    object-fit:fill;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-bottom: 0;
   }
 
 .great-hairstyle {
@@ -102,7 +164,7 @@ body {
     flex-grow: 1;
    padding-left: 10%;
    padding-right: 10%;
-    /* padding-top: 20%; */
+    padding-top: 20%;
     background-color: rgb(255,255,255);
 }
 
@@ -146,17 +208,18 @@ body {
   }
   
   .blurbs {
-    padding-left: 15px;
-    padding-right: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
     border: 6px solid;
     border-color: rgb(95,179,189);
+    /* margin-bottom: 0; */
     }
     
   #featured {
     grid-area: featured;
-    height: fit-content;
-    padding-bottom: 40px;
-    margin-bottom: 0;
+    height: 100%;
+    /* padding-bottom: 5%; */
+    /* margin-bottom: 2%; */
   }
 
   .boxtitle {
@@ -164,16 +227,16 @@ body {
     }
 
 #girl {
-    padding-top: 60px;
-    padding-bottom: 20px;
+    padding-top: 15%;
+    padding-bottom: 5%;
     width: 25%;
 }
         
 #hairtitle {
-    padding-left: 30px;
+    padding-left: 5%;
     font-size: 20px;
     font-weight: lighter;
-    padding-top: 50px;
+    padding-top: 10%;
     line-height: 1;
     }
     
@@ -182,7 +245,8 @@ body {
     grid-area: hairstyle;
     color: rgb(255,255,255);
     background-color: rgb(80,144,148);
-    padding-top: 30px;
+    padding-top: 15%;
+    padding-bottom: 1%;
   }
   
   #person{
@@ -196,7 +260,7 @@ body {
     grid-area: baldguy;
     color: rgb(255,255,255);
     background-color: rgb(80,144,148);
-    margin-bottom: 70px;
+    margin-bottom: 10%;
     margin-top: 0px;
     display: flex;
   }
@@ -207,9 +271,10 @@ body {
     
 #helpline {
     font-weight: bold;
-    font-size: 14px;
-    padding-left: 20px;
-    padding-top: 20px;
+    font-size: 16px;
+    padding-left: 5%;
+    padding-top: 3%;
+    padding-bottom: 5%;
 }
         
   footer {
@@ -217,7 +282,8 @@ body {
     background-color: rgb(77,142,150);
     color: rgb(77,142,150);
     z-index: -1;
-    /* height: 100px; */
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
   
  
