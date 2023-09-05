@@ -5,13 +5,12 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr 10fr 1fr;
     box-sizing: border-box;
     /* grid-row-gap: 45px;
     grid-column-gap: 20px; */
     grid-template-areas: 
-        "nav nav"
-        "main main"
-        "footer footer";
+        "nav nav nav"
+        "main main sidebar"
+        "footer footer footer";
 }
