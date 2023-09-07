@@ -1,11 +1,10 @@
 
 body {
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
     font-size: 20px;
     line-height: 2;
     font-family: "black han sans","ChangaOne","Walrus Bold", Arial, Helvetica, sans-serif;
-    margin-bottom: 0;
+    margin: 0;
     padding:0;
     border:0;
     background-color: rgb(237,237,237);
@@ -16,7 +15,7 @@ body {
     display: grid;
     margin:0%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
     box-sizing: border-box;
     grid-row-gap: 20px;
     grid-column-gap: 20px;
@@ -44,6 +43,7 @@ body {
   display: flex;
   align-items: center;
   text-transform: uppercase;
+  flex-wrap: wrap;
 }
 
 #logo {
@@ -63,6 +63,7 @@ body {
   justify-content: space-around;
   padding-top: 5%;
   padding-right: 10%;
+  flex-wrap:wrap;
   /* padding-left: 50%; */
 }
 
@@ -101,6 +102,11 @@ a:hover, a:active {
 
   #bottom-buffer {
     grid-area: bottom-buffer;
+  }
+
+  .cards {
+    padding-left: 0;
+    padding-right: 0;
   }
   #a {
     grid-area: a;
@@ -155,10 +161,14 @@ a:hover, a:active {
 .images img {
     flex-grow: 1;
     flex-shrink: 1;
+    width: 100%;
   }
 
-
-
+  .cards {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
 
   #bottom {
     display:flex;
@@ -170,9 +180,80 @@ a:hover, a:active {
       grid-area: footer;
       margin-bottom: 0;
       padding-bottom: 0;
+      color: white;
+      font-size: 10px;
     }
   
     .social {
       padding-right: 5%;
     }
     
+
+    @media screen and (max-width: 1024px) {
+      .container {
+          grid-template-columns: 1fr auto auto 1fr;
+          grid-template-rows: 1fr .5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr .5fr 1fr;
+          grid-row-gap: 10px;
+          grid-template-areas: 
+          "nav nav nav nav"
+          "ls top-buffer top-buffer rs"
+          "ls a b rs"
+          "ls c d rs"
+          "ls e f rs"
+          "ls g h rs"
+          "ls i j rs"
+          "ls k l rs"
+          "ls m n rs"
+          "ls o p rs"
+          "ls bottom-buffer bottom-buffer rs"
+          "footer footer footer footer";
+        }
+
+      }
+
+
+    @media screen and (max-width: 600px) {
+      .container {
+          grid-template-columns: auto auto;
+          /* grid-template-rows: 1fr .5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr .5fr 1fr; */
+          grid-row-gap: 10px;
+          grid-column-gap:1px;
+          grid-template-areas: 
+          "nav nav"
+          "ls top-buffer"
+          "ls a"
+          "ls b"
+          "ls c"
+          "ls d"
+          "ls e"
+          "ls f"
+          "ls g"
+          "ls h"
+          "ls i"
+          "ls j"
+          "ls k"
+          "ls l"
+          "ls m"
+          "ls n"
+          "ls o"
+          "ls p"
+          "ls bottom-buffer"
+          "footer footer";
+        }
+  
+        .pages {
+          padding-right: 0;
+        }
+        .stripe {
+          display: flex;
+          padding-top: 0%;
+          margin-top: 0;
+          flex-wrap: wrap;
+        }
+        #bottom {
+            padding-left: 0;
+        }
+        .social {
+          padding-right: 0;
+        }
+      }

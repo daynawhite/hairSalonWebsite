@@ -13,14 +13,15 @@ body {
 .container {
     display: grid;
     width: 100%;
-    grid-template-columns: auto;
+    height: 100%;
+    grid-template-columns: auto auto;
     grid-template-rows: 10% auto 10%;
     box-sizing: border-box;
     grid-row-gap: 20px;
     grid-template-areas: 
-        "nav"
-        "main"
-        "footer";
+        "nav nav"
+        "main main"
+        "footer footer";
 }
 .stripe {
     background-color: rgb(77,142,150);
@@ -80,7 +81,7 @@ a:hover, a:active {
 
 #bottom {
     display:flex;
-    padding-left: 40%;
+    /* padding-left: 40%; */
     align-items: center;
   }
   

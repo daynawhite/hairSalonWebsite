@@ -1,7 +1,7 @@
     
 body {
     width: 100%;
-    font-size: 20px;
+    font-size: 12px;
     line-height: 2;
     font-family: "black han sans","ChangaOne","Walrus Bold", Arial, Helvetica, sans-serif;
     margin:0;
@@ -15,7 +15,7 @@ body {
       display: grid;
       width: 100%;
       grid-template-columns: auto 210px 210px 210px 210px auto;
-      grid-template-rows: 5% 23% auto auto auto 8%;
+      /* grid-template-rows: 15% 20% 25% 15% 25% 8%; */
       box-sizing: border-box;
       grid-row-gap: 3%;
       grid-column-gap: 2%;
@@ -29,17 +29,20 @@ body {
     }
 
     .stripe {
+      display: flex;
       background-color: rgb(77,142,150);
-      margin-left: 0;
-      margin-right: 0;
+      /* margin-left: 0;
+      margin-right: 0; */
+      margin: 0;
       justify-content:space-between;
-      padding-left: 10%;
+      padding-left: 12%;
+      padding-right: 8%;
+      padding-top: 5%;
+      align-items: center;
     }
 
   #nav {
     grid-area: nav;
-    display: flex;
-    align-items: center;
     text-transform: uppercase;
   }
 
@@ -58,9 +61,9 @@ body {
     width: 50%;
     display: flex;
     justify-content: space-around;
-    padding-top: 5%;
+    padding-top: 1%;
     padding-right: 10%;
-    /* padding-left: 50%; */
+    align-items: center;
   }
 
   a:link, a:visited {
@@ -79,7 +82,7 @@ body {
     color:rgb(101, 103, 110);
   }
   
-  banner {
+  .flex-container {
     grid-area: banner;
     display: flex;
     color: black;
@@ -90,13 +93,12 @@ body {
     flex-grow: 1;
     flex-shrink: 1;
     flex-wrap:nowrap;
+    width: 100%;
   }
 
-.flex-container {
-display: flex;
-width: 100%;
-flex-wrap: nowrap;   
-/* align-items: center; */
+
+#biggirl {
+  height: 100%;
 }
 
   .sidemargin {
@@ -120,9 +122,11 @@ flex-wrap: nowrap;
 .great-hairstyle {
   /* display: flex;
   flex-wrap: nowrap; */
-    padding-top: 10%;
+    padding-top: 5%;
     padding-left: 5%;
     background-color: rgb(255,255,255);
+    font-size: 40px;
+    font-weight: bold;
 }
 
   h1 {
@@ -140,7 +144,7 @@ flex-wrap: nowrap;
   }
 
   .cards img {
-    width: 100%;
+    width:100%;
     border: 6px solid;
     border-color: rgb(95,179,189);
     border-radius: 2%;
@@ -195,10 +199,11 @@ h2 {
 
   .boxtitle {
     display: flex;
+    padding-top: 0;
     }
 
 #girl {
-    padding-top: 15%;
+    /* padding-top: 15%; */
     padding-bottom: 5%;
     width: 25%;
 }
@@ -207,8 +212,9 @@ h2 {
     padding-left: 5%;
     font-size: 20px;
     font-weight: lighter;
-    padding-top: 13%;
+    padding-top: 0;
     line-height: 1;
+    border-top: 0;
     }
     
   
@@ -217,7 +223,7 @@ h2 {
     color: rgb(255,255,255);
     background-color: rgb(80,144,148);
     /* padding-top: 15%; */
-    padding-bottom: 1%;
+    padding-bottom: 5%;
   }
   
   #person{
@@ -251,13 +257,16 @@ h2 {
 #bottom {
   display:flex;
   padding-left: 40%;
-  align-items: center;
+  padding-bottom: 5%;
+ 
 }
 
   footer {
     grid-area: footer;
     margin-bottom: 0;
     padding-bottom: 0;
+    color:white;
+
   }
 
   .social {
@@ -267,7 +276,8 @@ h2 {
   @media screen and (max-width: 1190px){
     .container{ 
       grid-template-columns: 10% auto auto 10%;
-      grid-template-rows: 5% 15% auto auto auto auto auto 5%;
+      grid-template-rows: 5% 10% auto auto auto auto auto 5%;
+      grid-row-gap: 2%;
       grid-template-areas:
         "nav nav nav nav"
         "ls banner banner rs"
@@ -276,7 +286,7 @@ h2 {
         "ls featured featured rs"
         "ls hairstyle hairstyle rs"
         "ls baldguy baldguy rs"
-        "footer footer footer footer"
+        "footer footer footer footer";    
     }
 
     /* #logo {
@@ -287,28 +297,33 @@ h2 {
     }
     .great-hairstyle {
       width:100%;
+      font-size: 35px;
+      font-weight: bold;
+      padding-right: 5%;;
     }
     #hairtitle {
       font-size: 30px;
     }
+
+   #featured {
+    padding-bottom: 10px;
+   }
+   #bottom {
+    padding-left: 10%;
+   }
   }
 
   @media screen and (max-width: 1020px) {
     .container{ 
       grid-template-columns: 5% auto auto 5%;
-      grid-template-rows: 3% 15% auto auto auto auto auto 2%;
-      }
+      grid-template-rows: 8% 10% auto auto auto auto auto 2%;
+      column-gap: 3%;  
+    }
 
-      banner {
-        flex-wrap:wrap;
-      }
-
-      .great-hairstyle {
-        font-size: 55px;
-        padding-left: 5%;
-        padding-right: 3%;
-        padding-top: 3%;
-        padding-bottom: 0;
+      .pages {
+        flex-wrap: wrap;
+        margin-top: 10px;
+        padding-right: 8%;
       }
     }
 
@@ -316,7 +331,7 @@ h2 {
   @media screen and (max-width: 600px) {
     .container {
         grid-template-columns: 2% auto 2%;
-        grid-template-rows: 3% 10% auto auto auto auto auto auto auto 2%;
+        grid-template-rows: 5% 20% auto auto auto auto auto auto auto 2%;
         grid-row-gap: 1%;
         grid-template-areas: 
         "nav nav nav"
@@ -330,8 +345,21 @@ h2 {
         "ls baldguy rs"
         "footer footer footer";
       }
-      banner {
-        flex-wrap:wrap;
+
+      #nav {
+        padding-left: 5%;
       }
-        
+      #biggirl {
+        max-height: 55%;
+        max-width: 100%;
+      }
+      .pages {
+        padding-right: 0;
+      }
+      .flex-container {
+        padding-top: 0%;
+        margin-top: 0;
+        flex-wrap: wrap;
+      }
+
     }
